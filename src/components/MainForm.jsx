@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import HoleOptions from "./HoleOptions";
 import PegOptions from "./PegOptions";
+import { ButtonGroup } from "react-bootstrap";
 
 const setInitialSelectionValues = () => ({
   peg: "",
@@ -13,20 +14,27 @@ const MainForm = () => {
     setInitialSelectionValues()
   );
 
-  const handleOnChange = (e) => {
-    const newValue = e.target.value;
+  // need to match up the peg and the hole
+  // based on the target type and value
+  const handleHoleOnChange = (event) => {
+    const newValue = event.target.value;
     setSelectionData({ hole: newValue });
+  };
+
+  const handlePegOnChange = (event) => {
+    const newValue = event.target.value;
+    setSelectionData({ peg: newValue });
   };
 
   return (
     <>
       <PegOptions
         selectionData={selectionData}
-        handleOnChange={handleOnChange}
+        handleOnChange={handlePegOnChange}
       />
       <HoleOptions
         selectionData={selectionData}
-        handleOnChange={handleOnChange}
+        handleOnChange={handleHoleOnChange}
       />
     </>
   );

@@ -7,19 +7,19 @@ const PegOptions = ({ selectionData, handleOnChange }) => {
   ];
 
   useEffect(() => {
-    console.log("selectionData", selectionData.peg);
+    console.log("selectionData.peg", selectionData.peg);
   });
 
   return (
     <div>
-      <ButtonGroup className="holeOptions">
+      <ButtonGroup className="pegOptions">
         <label className="optionLabel">Peg Shape</label>
         {radios.map((radio, idx) => (
           <ToggleButton
             key={idx}
-            id={`radio-${idx}`}
+            id={`peg-${idx}`}
             type="radio"
-            name="radio"
+            name="pegRadio"
             value={radio.value}
             checked={selectionData.peg === radio.value}
             onChange={handleOnChange}

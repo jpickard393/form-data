@@ -7,7 +7,7 @@ const HoleOptions = ({ selectionData, handleOnChange }) => {
   ];
 
   useEffect(() => {
-    console.log("selectionData", selectionData.hole);
+    console.log("selectionData.hole", selectionData.hole);
   });
 
   return (
@@ -17,9 +17,9 @@ const HoleOptions = ({ selectionData, handleOnChange }) => {
         {radios.map((radio, idx) => (
           <ToggleButton
             key={idx}
-            id={`radio-${idx}`}
+            id={`hole-${idx}`}
             type="radio"
-            name="radio"
+            name="holeRadio"
             value={radio.value}
             checked={selectionData.hole === radio.value}
             onChange={handleOnChange}
