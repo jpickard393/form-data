@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
 import { ButtonGroup, ToggleButton } from "react-bootstrap";
-const HoleOptions = ({ holeValue, handleOnChange }) => {
+const HoleOptions = ({ selectionData, handleOnChange }) => {
   const radios = [
     { name: "Round", value: "round" },
     { name: "Square", value: "square" },
   ];
 
   useEffect(() => {
-    console.log("holeValue", holeValue);
+    console.log("selectionData", selectionData.hole);
   });
 
   return (
@@ -21,8 +21,8 @@ const HoleOptions = ({ holeValue, handleOnChange }) => {
             type="radio"
             name="radio"
             value={radio.value}
-            checked={holeValue === radio.value}
-            onChange={(e) => handleOnChange(e)}
+            checked={selectionData.hole === radio.value}
+            onChange={handleOnChange}
           >
             {radio.name}
           </ToggleButton>

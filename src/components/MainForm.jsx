@@ -1,29 +1,34 @@
 import React, { useState } from "react";
 import HoleOptions from "./HoleOptions";
-// import PegOptions from "./PegOptions";
-// import Message from "./Message";
+import PegOptions from "./PegOptions";
 
-// const setInitialSelectionValues = () => ({
-//   peg: "",
-//   hole: "",
-//   useSledgeHammer: false,
-// });
+const setInitialSelectionValues = () => ({
+  peg: "",
+  hole: "",
+  useSledgeHammer: false,
+});
 
 const MainForm = () => {
-  // const [selectionData, setSelectionData] = useState(
-  //   setInitialSelectionValues()
-  // );
-  const [holeValue, setHoleValue] = useState("round");
+  const [selectionData, setSelectionData] = useState(
+    setInitialSelectionValues()
+  );
 
-  const handleHoleOnChange = (e) => {
-    setHoleValue(e.target.value);
+  const handleOnChange = (e) => {
+    const newValue = e.target.value;
+    setSelectionData({ hole: newValue });
   };
 
   return (
-    <HoleOptions
-      holeValue={holeValue}
-      handleOnChange={handleHoleOnChange}
-    ></HoleOptions>
+    <>
+      <PegOptions
+        selectionData={selectionData}
+        handleOnChange={handleOnChange}
+      />
+      <HoleOptions
+        selectionData={selectionData}
+        handleOnChange={handleOnChange}
+      />
+    </>
   );
 };
 export default MainForm;
