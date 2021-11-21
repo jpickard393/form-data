@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+
+.optionLabel {
+  padding:20px;
+}
+
+.holeOptions{
+  border:1px solid burlywood;
+  height:30px;
+  font-size: larger;
+}

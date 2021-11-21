@@ -12,7 +12,8 @@ const HoleOptions = ({ holeValue, handleOnChange }) => {
 
   return (
     <div>
-      <ButtonGroup>
+      <ButtonGroup className="holeOptions">
+        <label className="optionLabel">Hole Shape</label>
         {radios.map((radio, idx) => (
           <ToggleButton
             key={idx}
