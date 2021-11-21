@@ -1,18 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ButtonGroup, ToggleButton } from "react-bootstrap";
-const HoleOptions = ({ selectionData, handleOnChange }) => {
-  const [radioValue, setRadioValue] = useState("");
+const HoleOptions = () => {
+  const [radioValue, setRadioValue] = useState("round");
   const radios = [
-    { name: "Round", value: "1" },
-    { name: "Square", value: "2" },
+    { name: "Round", value: "round" },
+    { name: "Square", value: "square" },
   ];
 
-  const setChecked = (e) => {
-    console.log(e.value);
-    console.log(selectionData);
-    setRadioValue(e.currentTarget.value);
-    return radioValue === e.value;
+  const handleHoleOnChange = (e) => {
+    setRadioValue(e.target.value);
   };
+
+  useEffect(() => {
+    console.log(radioValue);
+  });
 
   return (
     <div>
@@ -26,7 +27,7 @@ const HoleOptions = ({ selectionData, handleOnChange }) => {
             name="radio"
             value={radio.value}
             checked={radioValue === radio.value}
-            onChange={(e) => setRadioValue(e.currentTarget.value)}
+            onChange={handleHoleOnChange}
           >
             {radio.name}
           </ToggleButton>
