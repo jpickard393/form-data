@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import HoleOptions from "./HoleOptions";
 import PegOptions from "./PegOptions";
-import { ButtonGroup } from "react-bootstrap";
 
 const setInitialSelectionValues = () => ({
   peg: "",
   hole: "",
-  useSledgeHammer: false,
+  forceIt: false,
 });
 
 const MainForm = () => {
@@ -14,28 +13,20 @@ const MainForm = () => {
     setInitialSelectionValues()
   );
 
-  // need to match up the peg and the hole
-  // based on the target type and value
-  const handleHoleOnChange = (event) => {
-    const newValue = event.target.value;
-    setSelectionData({ hole: newValue });
+  // need to keep existing state.  ie. both peg and hole not refresh
+  const handleOnChange = (e, dataType) => {
+    const property = e?.target?.value;
+    setSelectionData({ name: dataType, value: property });
   };
 
-  const handlePegOnChange = (event) => {
-    const newValue = event.target.value;
-    setSelectionData({ peg: newValue });
-  };
+  console.log(selectionData);
+
+  const formData = { selectionData, handleOnChange };
 
   return (
     <>
-      <PegOptions
-        selectionData={selectionData}
-        handleOnChange={handlePegOnChange}
-      />
-      <HoleOptions
-        selectionData={selectionData}
-        handleOnChange={handleHoleOnChange}
-      />
+      <PegOptions {...formData} />
+      <HoleOptions {...formData} />
     </>
   );
 };

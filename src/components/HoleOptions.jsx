@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { ButtonGroup, ToggleButton } from "react-bootstrap";
 const HoleOptions = ({ selectionData, handleOnChange }) => {
   const radios = [
@@ -6,23 +6,23 @@ const HoleOptions = ({ selectionData, handleOnChange }) => {
     { name: "Square", value: "square" },
   ];
 
-  useEffect(() => {
-    console.log("selectionData.hole", selectionData.hole);
-  });
-
   return (
     <div>
       <ButtonGroup className="holeOptions">
         <label className="optionLabel">Hole Shape</label>
         {radios.map((radio, idx) => (
           <ToggleButton
+            className="toggle"
             key={idx}
             id={`hole-${idx}`}
             type="radio"
             name="holeRadio"
             value={radio.value}
-            checked={selectionData.hole === radio.value}
-            onChange={handleOnChange}
+            checked={
+              selectionData.name === "hole" &&
+              selectionData.value === radio.value
+            }
+            onChange={(e) => handleOnChange(e, "hole")}
           >
             {radio.name}
           </ToggleButton>

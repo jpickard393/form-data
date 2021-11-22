@@ -41,8 +41,23 @@
   padding:20px;
 }
 
+.mainForm{
+  width:50%;
+}
+.toggle { margin:10px;}
+.optionLabel{margin-right:30px;}
+
 .holeOptions, .pegOptions{
-  border:1px solid burlywood;
-  height:30px;
-  font-size: larger;
+  margin-top: 10px;
+  padding-top:10px;
+  font-weight: bold;
+  height:50px;
+  font-size: x-large
+}
+
+.holeOptions {
+  background-color:rgb(113, 180, 122);
+}
+.pegOptions {
+  background-color:rgb(107, 111, 147);
 }
