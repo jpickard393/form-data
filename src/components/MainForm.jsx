@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import HoleOptions from "./HoleOptions";
 import PegOptions from "./PegOptions";
 
-const selectionValues = [
-  { item: "peg", shape: "" },
-  { item: "hole", shape: "" },
-];
+const selectionValues = () => ({
+  peg: "",
+  hole: "",
+  forceIt: false,
+});
 
 const MainForm = () => {
   const [selectionData, setSelectionData] = useState(selectionValues);
@@ -16,6 +17,8 @@ const MainForm = () => {
   };
 
   const formData = { selectionData, handleOnChange };
+
+  console.log(selectionData);
 
   return (
     <div>
