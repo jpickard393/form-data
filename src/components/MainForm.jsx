@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import HoleOptions from "./HoleOptions";
 import PegOptions from "./PegOptions";
-// make components from one parent
+
 const selectionValues = [
   { item: "peg", shape: "" },
   { item: "hole", shape: "" },

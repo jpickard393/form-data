@@ -24,9 +24,7 @@ const HoleOptions = ({ selectionData, handleOnChange }) => {
               selectionData.name === "hole" &&
               selectionData.value === radio.value
             }
-            //onChange={(e) => handleOnChange(e, "hole")}
             onChange={(e) => handleOnChange("hole", e)}
-            // try passing down two variables for handlechnage
           >
             {radio.name}
           </ToggleButton>
