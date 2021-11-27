@@ -16,13 +16,13 @@ const PegOptions = ({ selectionData, handleOnChange }) => {
             key={idx}
             id={`peg-${idx}`}
             type="radio"
-            name="pegRadio"
+            name="peg"
             value={radio.value}
             checked={
               selectionData.name === "peg" &&
               selectionData.value === radio.value
             }
-            onChange={(e) => handleOnChange(e, "peg")}
+            onChange={(e) => handleOnChange("peg", e)}
           >
             {radio.name}
           </ToggleButton>

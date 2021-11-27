@@ -6,6 +6,8 @@ const HoleOptions = ({ selectionData, handleOnChange }) => {
     { name: "Square", value: "square" },
   ];
 
+  console.log(selectionData);
+
   return (
     <div>
       <ButtonGroup className="holeOptions">
@@ -16,13 +18,15 @@ const HoleOptions = ({ selectionData, handleOnChange }) => {
             key={idx}
             id={`hole-${idx}`}
             type="radio"
-            name="holeRadio"
+            name="hole"
             value={radio.value}
             checked={
               selectionData.name === "hole" &&
               selectionData.value === radio.value
             }
-            onChange={(e) => handleOnChange(e, "hole")}
+            //onChange={(e) => handleOnChange(e, "hole")}
+            onChange={(e) => handleOnChange("hole", e)}
+            // try passing down two variables for handlechnage
           >
             {radio.name}
           </ToggleButton>

@@ -1,33 +1,27 @@
 import React, { useState } from "react";
 import HoleOptions from "./HoleOptions";
 import PegOptions from "./PegOptions";
-
-const setInitialSelectionValues = () => ({
-  peg: "",
-  hole: "",
-  forceIt: false,
-});
+// make components from one parent
+const selectionValues = [
+  { item: "peg", shape: "" },
+  { item: "hole", shape: "" },
+];
 
 const MainForm = () => {
-  const [selectionData, setSelectionData] = useState(
-    setInitialSelectionValues()
-  );
+  const [selectionData, setSelectionData] = useState(selectionValues);
 
-  // need to keep existing state.  ie. both peg and hole not refresh
-  const handleOnChange = (e, dataType) => {
-    const property = e?.target?.value;
-    setSelectionData({ name: dataType, value: property });
+  const handleOnChange = (data, e) => {
+    const selectedShape = e?.target?.value;
+    setSelectionData((state) => ({ ...state, [data]: selectedShape }));
   };
-
-  console.log(selectionData);
 
   const formData = { selectionData, handleOnChange };
 
   return (
-    <>
+    <div>
       <PegOptions {...formData} />
       <HoleOptions {...formData} />
-    </>
+    </div>
   );
 };
 export default MainForm;
