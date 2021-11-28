@@ -18,8 +18,6 @@ const MainForm = () => {
 
   const formData = { selectionData, handleOnChange };
 
-  console.log(selectionData);
-
   return (
     <div>
       <PegOptions {...formData} />

@@ -5,7 +5,6 @@ const PegOptions = ({ selectionData, handleOnChange }) => {
     { name: "Round", value: "round" },
     { name: "Square", value: "square" },
   ];
-
   return (
     <div>
       <ButtonGroup className="pegOptions">
@@ -18,10 +17,7 @@ const PegOptions = ({ selectionData, handleOnChange }) => {
             type="radio"
             name="peg"
             value={radio.value}
-            checked={
-              selectionData.name === "peg" &&
-              selectionData.value === radio.value
-            }
+            checked={selectionData.peg === radio.value}
             onChange={(e) => handleOnChange("peg", e)}
           >
             {radio.name}

@@ -5,9 +5,6 @@ const HoleOptions = ({ selectionData, handleOnChange }) => {
     { name: "Round", value: "round" },
     { name: "Square", value: "square" },
   ];
-
-  console.log(selectionData);
-
   return (
     <div>
       <ButtonGroup className="holeOptions">
@@ -20,10 +17,7 @@ const HoleOptions = ({ selectionData, handleOnChange }) => {
             type="radio"
             name="hole"
             value={radio.value}
-            checked={
-              selectionData.name === "hole" &&
-              selectionData.value === radio.value
-            }
+            checked={selectionData.hole === radio.value}
             onChange={(e) => handleOnChange("hole", e)}
           >
             {radio.name}
