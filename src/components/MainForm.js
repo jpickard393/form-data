@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import HoleOptions from "./HoleOptions";
 import PegOptions from "./PegOptions";
 import Message from "./Message";
-import Button from "react-bootstrap/Button";
 
 const selectionValues = () => ({
   peg: "",
@@ -24,9 +23,7 @@ const MainForm = () => {
         setSelectionValid(false);
         setMessageText("No that will not work");
       }
-      return true;
     }
-    return false;
   };
 
   useEffect(() => {
