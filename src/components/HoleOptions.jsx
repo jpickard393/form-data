@@ -11,7 +11,7 @@ const HoleOptions = ({ selectionData, handleOnChange }) => {
         <label className="optionLabel">Hole Shape</label>
         {radios.map((radio, idx) => (
           <ToggleButton
-            className="toggle"
+            className="hole-toggle"
             key={idx}
             id={`hole-${idx}`}
             type="radio"
@@ -19,6 +19,7 @@ const HoleOptions = ({ selectionData, handleOnChange }) => {
             value={radio.value}
             checked={selectionData.hole === radio.value}
             onChange={(e) => handleOnChange("hole", e)}
+            variant="success"
           >
             {radio.name}
           </ToggleButton>

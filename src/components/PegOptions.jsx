@@ -11,7 +11,7 @@ const PegOptions = ({ selectionData, handleOnChange }) => {
         <label className="optionLabel">Peg Shape</label>
         {radios.map((radio, idx) => (
           <ToggleButton
-            className="toggle"
+            className="peg-toggle"
             key={idx}
             id={`peg-${idx}`}
             type="radio"
@@ -19,6 +19,7 @@ const PegOptions = ({ selectionData, handleOnChange }) => {
             value={radio.value}
             checked={selectionData.peg === radio.value}
             onChange={(e) => handleOnChange("peg", e)}
+            variant="primary"
           >
             {radio.name}
           </ToggleButton>
