@@ -18,7 +18,7 @@ const PegOptions = ({ selectionData, handleOnChange }) => {
             name="peg"
             value={radio.value}
             checked={selectionData.peg === radio.value}
-            onChange={(e) => handleOnChange("peg", e)}
+            onChange={(e) => handleOnChange("peg", e?.target?.value)}
             variant="primary"
           >
             {radio.name}

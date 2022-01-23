@@ -30,8 +30,7 @@ const MainForm = () => {
     validateSelection();
   });
 
-  const handleOnChange = (buttonType, e) => {
-    const selectedShape = e?.target?.value;
+  const handleOnChange = (buttonType, selectedShape) => {
     setSelectionData((state) => ({ ...state, [buttonType]: selectedShape }));
   };
 

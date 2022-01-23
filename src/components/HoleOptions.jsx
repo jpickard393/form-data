@@ -18,7 +18,7 @@ const HoleOptions = ({ selectionData, handleOnChange }) => {
             name="hole"
             value={radio.value}
             checked={selectionData.hole === radio.value}
-            onChange={(e) => handleOnChange("hole", e)}
+            onChange={(e) => handleOnChange("hole", e?.target?.value)}
             variant="success"
           >
             {radio.name}
