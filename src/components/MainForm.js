@@ -3,11 +3,11 @@ import HoleOptions from "./HoleOptions";
 import PegOptions from "./PegOptions";
 import Message from "./Message";
 
-const selectionValues = () => ({
+const selectionValues = {
   peg: "",
   hole: "",
   forceIt: false,
-});
+};
 
 const MainForm = () => {
   const [messageText, setMessageText] = useState("");
@@ -28,10 +28,10 @@ const MainForm = () => {
 
   useEffect(() => {
     validateSelection();
-  });
+  }, [selectionData]);
 
   const handleOnChange = (buttonType, selectedShape) => {
-    setSelectionData((state) => ({ ...state, [buttonType]: selectedShape }));
+    setSelectionData((prevState) => ({ ...prevState, [buttonType]: selectedShape }));
   };
 
   const formData = { selectionData, handleOnChange };
@@ -43,4 +43,5 @@ const MainForm = () => {
     </div>
   );
 };
+
 export default MainForm;
